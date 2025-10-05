@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100], sub[20];
+    printf("Enter text: ");
+    gets(str);
+    printf("Enter substring to delete: ");
+    gets(sub);
+    char *pos = strstr(str, sub);
+    if (pos) {
+        int i;
+        for (i = 0; i < strlen(sub); i++)
+            pos[i] = ' ';
+    }
+    printf("After deletion: %s\n", str);
+    return 0;
+}
