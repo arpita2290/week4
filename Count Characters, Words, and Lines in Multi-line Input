@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int chars = 0, words = 0, lines = 0;
+    char c, last = '\n';
+    printf("Enter text (Ctrl+D to end):\n");
+    while ((c = getchar()) != EOF) {
+        chars++;
+        if (c == '\n') lines++;
+        if ((c == ' ' || c == '\n' || c == '\t') && last != ' ' && last != '\n' && last != '\t')
+            words++;
+        last = c;
+    }
+    printf("Characters: %d\nWords: %d\nLines: %d\n", chars, words, lines);
+    return 0;
+}
